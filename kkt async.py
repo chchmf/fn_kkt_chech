@@ -27,7 +27,7 @@ async def get_data(session, url, sn):
 		resp_text = await resp.text()
 		print(sn+";"+str(json.loads(resp_text)))
 		json_text = json.loads(resp_text)
-		if json_text["error"] == "Произошла техническая ошибка":
+		if "error" in json_text:
 			csv.write(sn+";"+str(json_text["error"])+"\n")
 		elif json_text["check_status"] == 0:
 			csv.write(sn+";"+str(json_text["check_result"])+"\n")
