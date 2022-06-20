@@ -12,9 +12,9 @@ file = open("schedule.txt","r", encoding='utf-8')
 list = []
 
 for eachLine in file:
-    a = eachLine.strip().split("\n")
-    for i in range(len(a)):
-        list.append(a[i].replace('"',''))
+	a = eachLine.strip().split("\n")
+	for i in range(len(a)):
+		list.append(a[i].replace('"',''))
 
 def checkfns(sn, model):
 	header = {"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.4 Safari/605.1.15",
